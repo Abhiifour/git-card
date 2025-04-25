@@ -2,7 +2,10 @@
 import { CiGlobe } from "react-icons/ci";
 
 // import Image from "next/image";
-export default function Card({userData}:{userData:any}){
+interface CardProps{
+  userData:any
+}
+export default function Card({userData}:CardProps){
     const date = new Date(userData?.created_at);
     return (
         <div className="shadow-2xl rounded-4xl w-[350px] p-8 font-inter bg-[#2C2C2C]   text-white tracking-tight bg-blur-lg">

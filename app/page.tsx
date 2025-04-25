@@ -21,9 +21,6 @@ export default function Home() {
   const router = useRouter()
 
    const handleSubmit = async ()=>{
-    const res = await axios.get(`http://127.0.0.1:8787/user/${user}`)
-    console.log(res.data)
-    setUserData(res.data.data)
     router.push(`/${user}`)
   }
 
