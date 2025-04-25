@@ -4,7 +4,13 @@ import Card from "@/components/Card";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default  function Page({params}: {params: {userid: string}}) {
+interface pageProps {
+    params:{
+        userid:string
+    }
+}
+
+export default  function Page({params}: pageProps) {
     
     
     const [data , setData] = useState<any>()
