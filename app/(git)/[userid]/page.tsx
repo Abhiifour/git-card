@@ -11,7 +11,7 @@ export default  function Page({params}: {params: {userid: string}}) {
     
     const getData = async() =>{
         const {userid} = await params;
-        const res = await axios.get(`http://127.0.0.1:8787/user/${userid}`)
+        const res = await axios.get(`https://git-card-backend.as8998013.workers.dev/user/${userid}`)
         console.log(res.data)
         setData(res.data.data)
     }
