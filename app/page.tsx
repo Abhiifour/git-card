@@ -27,7 +27,7 @@ export default function Home() {
   
   return (
     <div className="h-screen w-full bg-[#1E1E1E] font-inter ">
-      <div className=" h-[75%] max-w-[1180px]  bg-[url('/gitcat.jpeg')] bg-cover mx-auto border border-dashed border-green-400">
+      <div className=" h-[75%] max-w-[1180px]  bg-[url('/gitcat.jpeg')] bg-cover mx-auto border border-dashed border-[#2cd13f]">
        {/* <GoGitMerge className="absolute text-emerald-400 opacity-10 text-9xl top-10 left-10" />
       <FaGitAlt className="absolute text-emerald-400 opacity-10 text-9xl top-20 right-20" />
       <FaGithub className="absolute text-emerald-400 opacity-10 text-9xl bottom-20 left-20" />
@@ -36,14 +36,18 @@ export default function Home() {
       <SiGithubcopilot className="absolute text-emerald-400 opacity-10 text-9xl top-1/4 right-1/4 transform -translate-x-1/2" />
       <SiGithubsponsors className="absolute text-emerald-400 opacity-10 text-9xl bottom-1/4 left-1/3 transform -translate-x-1/2" /> */}
     </div>
-    <div className="h-[25%] flex flex-col justify-center items-center gap-4 py-8 border border-t-0 border-dashed border-green-400 max-w-[1180px] mx-auto"> 
+    <div className="h-[25%] flex flex-col justify-center items-center gap-4 py-8 border border-t-0 border-dashed border-[#2cd13f] max-w-[1180px] mx-auto"> 
         <h1 className="font- text-lg text-[#838080]">
           Please add you github username to continue
         </h1>
         <div className="flex gap-1 rounded-3xl border border-[#595858] bg-[#2f2f2f] py-2 pl-4 pr-2 ">
-        <input type="text" value={user} onChange={(e) => setUser(e.target.value)} className=" py-1 px-2 border-0 outline-0 text-[#686767]"/>
+        <input type="text" value={user} onChange={(e) => setUser(e.target.value)} onKeyDown={(e) => {
+          if(e.key === "Enter"){
+            handleSubmit()
+          }
+        }} className=" py-1 px-2 border-0 outline-0 text-[#686767]"/>
 
-        <button onClick={handleSubmit} className="border-2 p-2 rounded-full px-2 cursor-pointer bg-green-500 border-green-400"  ><GrLinkNext/></button>
+        <button onClick={handleSubmit} className="border-2 p-2 rounded-full px-2 cursor-pointer bg-green-500 border-green-400"   ><GrLinkNext/></button>
         </div>
         </div>
       
